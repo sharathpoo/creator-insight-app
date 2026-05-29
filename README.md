@@ -1,0 +1,132 @@
+# Creator Insights — Social Media Analytics Dashboard
+
+This repository contains a full-stack prototype for Creator Insights: a social media analytics dashboard for creators and brands. It uses Next.js for the frontend and Node/Express + MongoDB for the backend. The analytics data are dummy JSON files served by the backend APIs.
+
+---
+
+## Research summary
+
+I researched the native analytics offered by Instagram, YouTube, TikTok, X (Twitter), and LinkedIn, and reviewed dashboards from products like Buffer, Hootsuite, and Sprout Social. Creators care about growth, reach, engagement, content performance, and audience composition. Based on that, the dashboard focuses on these high-level areas:
+
+- Audience & growth: followers/subscribers, follower growth rate, top geographies
+- Reach & impressions: how many users saw content (reach, impressions)
+- Engagement: likes, comments, shares, saves, engagement rate (engagement / reach)
+- Content performance: per-post metrics and top posts
+- Watch/consumption metrics where relevant: average watch time (YouTube), video views (TikTok/Instagram Reels)
+
+Key goal: surface the single most important KPI quickly (followers/reach) while making it easy to drill into time-series trends and top content.
+
+---
+
+## Chosen metrics by platform
+
+- Instagram
+  - Followers, impressions, reach, profile visits
+  - Engagements: likes, comments, saves, shares
+  - Posts: posts/reels counts, top posts with impressions & engagement rate
+
+- YouTube
+  - Subscribers, views, watch time (avg watch duration), impressions
+  - Engagements: likes, comments, shares
+  - Video-specific metrics: average view duration, click-through rate (CTR)
+
+- TikTok
+  - Followers, video views, likes, shares
+  - Average watch time and completion rate
+  - Top videos by views and engagement rate
+
+- X (Twitter)
+  - Followers, impressions, engagements (likes/retweets/replies)
+  - Top tweets with impressions and engagement rate
+
+- LinkedIn
+  - Followers, impressions, clicks, engagement (reactions/comments/shares)
+  - Top posts and audience industries/geographies
+
+Each platform dataset includes totals, a daily time series for trends, and a small list of top content items. This structure supports overview KPIs, comparison cards, time-series charts, and content tables.
+
+---
+
+## Data shape (example)
+
+Overview response (overview across platforms):
+
+{
+  "platforms": [
+    { "id": "instagram", "followers": 12300, "reach": 45000, "engagement_rate": 4.2 },
+    { "id": "youtube", "subscribers": 98000, "views": 1200000, "engagement_rate": 3.1 }
+  ]
+}
+
+Platform detail response (per-platform):
+
+{
+  "profile": { "followers": 12300, "impressions": 54000 },
+  "timeseries": [{ "date": "2026-05-01", "followers": 12100, "impressions": 2000 }],
+  "top_posts": [{ "id": "p1", "date": "2026-05-10", "views": 12000, "likes": 800 }]
+}
+
+The backend stores each platform's dummy dataset under `backend/src/data/*.json` and exposes endpoints under `/api/analytics`.
+
+---
+
+## API endpoints (suggested)
+
+- `POST /api/auth/register` — create user
+- `POST /api/auth/login` — authenticate and return JWT
+- `GET /api/analytics/overview` — totals across all platforms
+- `GET /api/analytics/:platform` — platform-specific detail (timeseries, top posts)
+
+Endpoints should be protected where appropriate; the frontend stores the JWT and sends it in `Authorization: Bearer <token>` headers.
+
+---
+
+## UI decisions and product thinking
+
+- Landing / Overview
+  - Grid of 5 platform cards showing followers/reach/engagement at-a-glance.
+  - Top-level trend sparkline under each card (7-day follower change).
+
+- Platform detail
+  - Big KPI header (followers, reach, engagement rate).
+  - Time-series chart (followers over time, impressions over time).
+  - Top content list with quick insights and link to original post (if available).
+
+- Why this ordering
+  - Creators need quick signal (has my audience grown?) + ability to identify which content performed well so they can replicate success.
+
+---
+
+## Dev notes / how to run
+
+Frontend (Next.js): `frontend/`
+
+```bash
+cd "c:\Creator Insights app\frontend"
+npm install
+npm run dev
+```
+
+Backend (Express + MongoDB): `backend/`
+
+```bash
+cd "c:\Creator Insights app\backend"
+npm install
+# ensure MongoDB is running and update .env MONGO_URI if necessary
+npm run dev
+```
+
+The backend serves dummy JSON from `backend/src/data/*.json`. Update data there to change what the frontend displays.
+
+---
+
+## Next steps recommended
+
+- Wire the frontend `AuthProvider` into `src/app/layout.jsx` and connect `LoginForm`/`SignupForm` to the backend auth endpoints.
+- Implement `/api/analytics/:platform` in `analyticsController` and return the detailed JSON shape.
+- Add charts (I recommend `recharts` or `chart.js` / `react-chartjs-2`) and build platform detail pages.
+- Polish UI with Tailwind utilities and responsive layout.
+
+---
+
+If you'd like, I can now: wire the `AuthProvider` into `src/app/layout.jsx`, implement the platform endpoints, or start the backend dev server and run a quick smoke test. Which should I do next?

@@ -1,0 +1,22 @@
+{
+  "overview": {
+    "subscribers": 98000,
+    "views": 1200000,
+    "watch_time": 630000,
+    "impressions": 860000,
+    "videos": 420,
+    "engagement": 3.1
+  },
+  "timeseries": [
+    { "date": "2026-05-01", "views": 15200, "subscribers": 97700, "watch_time": 7200, "impressions": 10400 },
+    { "date": "2026-05-02", "views": 15800, "subscribers": 97790, "watch_time": 7600, "impressions": 10800 },
+    { "date": "2026-05-03", "views": 16400, "subscribers": 97890, "watch_time": 7900, "impressions": 11200 },
+    { "date": "2026-05-04", "views": 17100, "subscribers": 97950, "watch_time": 8200, "impressions": 11800 },
+    { "date": "2026-05-05", "views": 17600, "subscribers": 97990, "watch_time": 8400, "impressions": 12200 },
+    { "date": "2026-05-06", "views": 18000, "subscribers": 98000, "watch_time": 8600, "impressions": 12400 }
+  ],
+  "top_posts": [
+    { "id": "yt1", "title": "Creator toolkit breakdown", "date": "2026-05-05", "views": 210000, "likes": 8900, "comments": 420, "shares": 310, "engagement_rate": 4.3 },
+    { "id": "yt2", "title": "How to grow watch time", "date": "2026-05-02", "views": 179000, "likes": 7600, "comments": 280, "shares": 240, "engagement_rate": 4.0 }
+  ]
+}

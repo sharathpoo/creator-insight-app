@@ -1,0 +1,22 @@
+{
+  "overview": {
+    "followers": 45200,
+    "video_views": 980000,
+    "likes": 340000,
+    "shares": 62000,
+    "videos": 210,
+    "engagement": 5.6
+  },
+  "timeseries": [
+    { "date": "2026-05-01", "video_views": 120000, "followers": 44500, "likes": 38000, "shares": 6900 },
+    { "date": "2026-05-02", "video_views": 135000, "followers": 44750, "likes": 42000, "shares": 7300 },
+    { "date": "2026-05-03", "video_views": 142000, "followers": 44990, "likes": 45000, "shares": 7600 },
+    { "date": "2026-05-04", "video_views": 150000, "followers": 45120, "likes": 47000, "shares": 8000 },
+    { "date": "2026-05-05", "video_views": 155000, "followers": 45190, "likes": 49000, "shares": 8200 },
+    { "date": "2026-05-06", "video_views": 165000, "followers": 45200, "likes": 50000, "shares": 8500 }
+  ],
+  "top_posts": [
+    { "id": "tt1", "title": "Viral content calendar", "date": "2026-05-06", "views": 360000, "likes": 18200, "shares": 5200, "engagement_rate": 6.2 },
+    { "id": "tt2", "title": "Trending audio strategy", "date": "2026-05-04", "views": 290000, "likes": 14500, "shares": 4100, "engagement_rate": 5.8 }
+  ]
+}

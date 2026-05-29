@@ -1,0 +1,20 @@
+{
+  "overview": {
+    "followers": 54000,
+    "impressions": 420000,
+    "engagement": 2.4,
+    "tweets": 1200
+  },
+  "timeseries": [
+    { "date": "2026-05-01", "impressions": 61000, "followers": 53400, "engagement": 2.2 },
+    { "date": "2026-05-02", "impressions": 64000, "followers": 53650, "engagement": 2.3 },
+    { "date": "2026-05-03", "impressions": 66000, "followers": 53890, "engagement": 2.4 },
+    { "date": "2026-05-04", "impressions": 68000, "followers": 54020, "engagement": 2.5 },
+    { "date": "2026-05-05", "impressions": 70000, "followers": 54080, "engagement": 2.4 },
+    { "date": "2026-05-06", "impressions": 72000, "followers": 54000, "engagement": 2.4 }
+  ],
+  "top_posts": [
+    { "id": "x1", "title": "Live content strategy update", "date": "2026-05-06", "impressions": 52000, "likes": 4200, "comments": 280, "shares": 190, "engagement_rate": 3.1 },
+    { "id": "x2", "title": "Tweet thread: creator growth", "date": "2026-05-04", "impressions": 46000, "likes": 3600, "comments": 220, "shares": 170, "engagement_rate": 2.8 }
+  ]
+}
