@@ -8,11 +8,11 @@
   },
   "timeseries": [
     { "date": "2026-05-01", "followers": 12030, "impressions": 7100, "reach": 6000, "engagement": 4.0 },
-    { "date": "2026-05-02", "followers": 12090, "impressions": 6900, "reach": 5800, "engagement": 4.1 },
-    { "date": "2026-05-03", "followers": 12150, "impressions": 7200, "reach": 6100, "engagement": 4.1 },
-    { "date": "2026-05-04", "followers": 12230, "impressions": 7700, "reach": 6500, "engagement": 4.2 },
-    { "date": "2026-05-05", "followers": 12280, "impressions": 7600, "reach": 6400, "engagement": 4.3 },
-    { "date": "2026-05-06", "followers": 12300, "impressions": 7800, "reach": 6600, "engagement": 4.2 }
+    { "date": "2026-05-02", "followers": 12980, "impressions": 8200, "reach": 6200, "engagement": 4.3 },
+    { "date": "2026-05-03", "followers": 11800, "impressions": 6900, "reach": 5900, "engagement": 4.1 },
+    { "date": "2026-05-04", "followers": 12550, "impressions": 8400, "reach": 6800, "engagement": 4.5 },
+    { "date": "2026-05-05", "followers": 11940, "impressions": 7200, "reach": 6100, "engagement": 4.2 },
+    { "date": "2026-05-06", "followers": 12630, "impressions": 9000, "reach": 7000, "engagement": 4.6 }
   ],
   "top_posts": [
     { "id": "ig1", "title": "Reel: Growth hacks for creators", "date": "2026-05-06", "impressions": 15000, "likes": 2800, "comments": 210, "shares": 120, "engagement_rate": 5.1 },

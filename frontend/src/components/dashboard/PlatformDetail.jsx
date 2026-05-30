@@ -115,11 +115,15 @@ export default function PlatformDetail({ platform }) {
 
   const chartData = useMemo(() => {
     if (!data?.timeseries) return []
-    return data.timeseries.map((point) => ({
-      date: point.date,
-      value: point[config.chartKey] ?? point[config.metricKey] ?? 0,
-    }))
+    return [...data.timeseries]
+      .sort((a, b) => new Date(a.date) - new Date(b.date))
+      .map((point) => ({
+        date: point.date,
+        value: point[config.chartKey] ?? point[config.metricKey] ?? 0,
+      }))
   }, [data, config.chartKey, config.metricKey])
+
+
 
   if (loading) return <div className="p-6 flex justify-center"><Loader /></div>
   if (error) return <div className="p-6 text-red-600">{error}</div>
@@ -163,7 +167,7 @@ export default function PlatformDetail({ platform }) {
               <XAxis dataKey="date" tick={{ fill: '#475569', fontSize: 12 }} axisLine={false} tickLine={false} />
               <YAxis tick={{ fill: '#475569', fontSize: 12 }} axisLine={false} tickLine={false} />
               <Tooltip formatter={(value) => formatNumber(value)} contentStyle={{ borderRadius: '1rem', borderColor: '#e2e8f0' }} />
-              <Line type="monotone" dataKey="value" stroke="#7c3aed" strokeWidth={3} dot={false} />
+              <Line type="monotone" dataKey="value" stroke="#7c3aed" strokeWidth={3} dot={{ fill: '#7c3aed', r: 5 }} activeDot={{ r: 7 }} isAnimationActive={true} />
             </LineChart>
           </ResponsiveContainer>
         </div>

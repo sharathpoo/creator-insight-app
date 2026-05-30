@@ -9,10 +9,10 @@
   },
   "timeseries": [
     { "date": "2026-05-01", "views": 15200, "subscribers": 97700, "watch_time": 7200, "impressions": 10400 },
-    { "date": "2026-05-02", "views": 15800, "subscribers": 97790, "watch_time": 7600, "impressions": 10800 },
-    { "date": "2026-05-03", "views": 16400, "subscribers": 97890, "watch_time": 7900, "impressions": 11200 },
-    { "date": "2026-05-04", "views": 17100, "subscribers": 97950, "watch_time": 8200, "impressions": 11800 },
-    { "date": "2026-05-05", "views": 17600, "subscribers": 97990, "watch_time": 8400, "impressions": 12200 },
+    { "date": "2026-05-02", "views": 16800, "subscribers": 97790, "watch_time": 7600, "impressions": 10800 },
+    { "date": "2026-05-03", "views": 14200, "subscribers": 97890, "watch_time": 7400, "impressions": 10600 },
+    { "date": "2026-05-04", "views": 17100, "subscribers": 97840, "watch_time": 7900, "impressions": 11200 },
+    { "date": "2026-05-05", "views": 15300, "subscribers": 97910, "watch_time": 7800, "impressions": 11000 },
     { "date": "2026-05-06", "views": 18000, "subscribers": 98000, "watch_time": 8600, "impressions": 12400 }
   ],
   "top_posts": [
