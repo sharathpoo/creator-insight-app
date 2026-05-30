@@ -27,12 +27,14 @@ export default function SignupForm() {
     } catch (err) {
       console.error('Signup error:', err)
       const message = err?.message || String(err) || 'Signup failed'
-      if (message.includes('User exists')) {
+      if (message.toLowerCase().includes('user exists')) {
         setError('Email already registered. Please use a different email.')
-      } else if (message.includes('Invalid')) {
+      } else if (message.toLowerCase().includes('invalid')) {
         setError('Please check your input and try again.')
-      } else if (message.includes('Failed to fetch') || message.toLowerCase().includes('network')) {
-        setError('Network error. Please check your connection and try again.')
+      } else if (message.toLowerCase().includes('failed to fetch') || message.toLowerCase().includes('network')) {
+        setError('Unable to reach the backend API. Check your API URL or deployment settings.')
+      } else if (message.toLowerCase().includes('missing next_public_api_base_url')) {
+        setError('Missing API base URL. Set NEXT_PUBLIC_API_BASE_URL in Vercel environment variables.')
       } else {
         setError(message)
       }

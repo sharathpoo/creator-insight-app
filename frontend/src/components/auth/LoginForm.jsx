@@ -33,7 +33,9 @@ export default function LoginForm() {
       if (message.toLowerCase().includes('invalid')) {
         setError('Invalid email or password.')
       } else if (message.toLowerCase().includes('failed to fetch') || message.toLowerCase().includes('network')) {
-        setError('Unable to reach the server. Please check your network or API URL.')
+        setError('Unable to reach the backend API. Check your API URL or deployment settings.')
+      } else if (message.toLowerCase().includes('missing next_public_api_base_url')) {
+        setError('Missing API base URL. Set NEXT_PUBLIC_API_BASE_URL in Vercel environment variables.')
       } else {
         setError(message)
       }
