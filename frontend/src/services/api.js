@@ -1,4 +1,4 @@
-const BASE = process.env.NEXT_PUBLIC_API_BASE_URL || ''
+const BASE = process.env.NEXT_PUBLIC_API_BASE_URL || '/api'
 
 export async function fetchJSON(path, opts = {}) {
   const headers = Object.assign({}, opts.headers || {})
@@ -9,7 +9,8 @@ export async function fetchJSON(path, opts = {}) {
   } catch (e) {}
   if (token) headers['Authorization'] = `Bearer ${token}`
 
-  const res = await fetch(`${BASE}${path}`, { ...opts, headers })
+  const url = `${BASE}${path}`
+  const res = await fetch(url, { ...opts, headers })
   if (!res.ok) {
     const text = await res.text()
     let message = res.statusText

@@ -28,7 +28,15 @@ export default function LoginForm() {
       setUser(res.user)
       window.location.href = '/dashboard'
     } catch (err) {
-      setError(err.message || 'Login failed')
+      console.error('Login error:', err)
+      const message = err?.message || String(err) || 'Login failed'
+      if (message.toLowerCase().includes('invalid')) {
+        setError('Invalid email or password.')
+      } else if (message.toLowerCase().includes('failed to fetch') || message.toLowerCase().includes('network')) {
+        setError('Unable to reach the server. Please check your network or API URL.')
+      } else {
+        setError(message)
+      }
     } finally {
       setLoading(false)
     }

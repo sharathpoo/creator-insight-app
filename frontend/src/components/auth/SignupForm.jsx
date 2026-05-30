@@ -25,7 +25,17 @@ export default function SignupForm() {
       setUser(res.user)
       window.location.href = '/dashboard'
     } catch (err) {
-      setError(err.message || 'Signup failed')
+      console.error('Signup error:', err)
+      const message = err?.message || String(err) || 'Signup failed'
+      if (message.includes('User exists')) {
+        setError('Email already registered. Please use a different email.')
+      } else if (message.includes('Invalid')) {
+        setError('Please check your input and try again.')
+      } else if (message.includes('Failed to fetch') || message.toLowerCase().includes('network')) {
+        setError('Network error. Please check your connection and try again.')
+      } else {
+        setError(message)
+      }
     } finally {
       setLoading(false)
     }
